@@ -1,0 +1,120 @@
+extends layout
+block content
+  #g
+      .container
+          .row.centered
+            div(style='  display: inline-block;')
+              table.table.table-bordered.table-hover(bgcolor='white')
+                tr
+                  td
+                    center
+                      h1(style='color: black; background-color:#A9F5F2') Analizador Descendente Predictivo Recursivo
+                      |                         
+                      br
+                      |                         
+                      div(align='center')
+                        h2 Entrada
+                        |                            
+                        textarea#INPUT(autofocus='', cols='80', rows='5', placeholder='Escriba aquí o arrastre un fichero JavaScript', style='border:dashed 2px black; background-color:#f5f5f5;color:#0000ff;')
+                        |      
+                        .loadfile
+                        div
+                           table
+                            tr
+                              td
+                                #upload
+                                  input#files(type='file', accept='.js')
+                              td
+                                button#example1(onclick="dump('/examples/example1.txt');", type='button') example1
+                                button#example2(onclick="dump('/examples/example2.txt');", type='button') example2
+                                button#example3(onclick="dump('/examples/example3.txt');", type='button') example3
+                        br
+                        |           
+                        script(type='text/javascript').
+                          function dump(fileName) {
+                          $.get(fileName, function (data) {
+                          $("#INPUT").val(data);
+                          });
+                          };
+                          document.getElementById('files').addEventListener('change', CopyMe, false);
+                          function CopyMe(evt) {
+                          var file = evt.target.files[0];
+                          if (file) {
+                          var reader = new FileReader();
+                          reader.onload = function(e) {
+                          INPUT.innerHTML = e.target.result;
+                          }
+                          var c = reader.readAsText(file);
+                          }
+                          else { alert("Failed to load file"); }
+                          }
+                        |  
+                        h2 Salida
+                        |                            
+                        textarea#OUTPUT(cols='80', rows='5', style='border:solid 1px black; background-color:#f5f5f5;color:#0000ff;')
+                        |    
+                        br
+                        button#PARSE(value="parse" type='button') Analizar   
+                        |                         
+                        br
+                        pre#OUTPUT
+                        br
+                        |          
+                        #enlaces
+                          a(href='./tests', target='_blank') Tests
+                          |          
+                          br
+                          |          
+                          a(href='https://github.com/gcpmendez/Pr5_PL_1415', target='_blank') GitHub
+                          |          
+                          br
+                          |          
+                          a(href='https://travis-ci.org/', target='_blank') Travis
+                        |          
+                        br
+                        |          
+                        h2 Autores
+                        |          
+                        #autores
+                          a(href='https://github.com/alu0100315462', target='_blank')
+                            | &Aacute;lvaro Su&aacute;rez Chausson
+                           
+                          |          
+                          br
+                          |          
+                          a(href='https://gcpmendez.github.io', target='_blank')
+                            | Germ&aacute;n Paz M&eacute;ndez
+                            
+                        //
+                          <br>
+                          <a href="https://pr3pl1415.herokuapp.com/tests/">Tests</a>
+                          <br>
+                          <a href="http://en.wikipedia.org/wiki/Comma-separated_values">Wikipedia</a>
+                        br
+            br
+            |          
+            |          
+            |          
+            |          
+            |          
+            br
+            |          
+            h4
+              a(href='http://gcpmendez.github.io/PL1415/')
+                b &lt;&lt;&lt;
+      .container.mt
+        .row.clients.centered
+          p.mb Escuela T&eacute;cnica Superior de Ingenier&iacute;a Inform&aacute;tica - ULL
+        // /row
+      // /container
+      // /.G
+      // Placed at the end of the document so the pages load faster
+      //script(src='assets/js/jquery.min.js')
+      //script(src='assets/js/bootstrap.min.js')
+      //script(src='assets/js/retina-1.1.0.js')
+      //script(src='assets/js/jquery.hoverdir.js')
+      //script(src='assets/js/jquery.hoverex.min.js')
+      //script(src='assets/js/jquery.prettyPhoto.js')
+      //script(src='assets/js/jquery.isotope.min.js')
+      //script(src='assets/js/custom.js')
+     

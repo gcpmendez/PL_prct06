@@ -1,0 +1,42 @@
+doctype html(lang='en')
+html
+  head
+    title Predictive Recursive Descent Parser
+    meta(charset='utf-8')
+    |         
+    //script(type='text/coffeescript', src='actions.coffee')
+    |         
+    //script(type='text/coffeescript', src='tokens.coffee')
+    |         
+    //script(type='text/coffeescript', src='parse.coffee')
+    |         
+    
+    // Main para controlar las funciones de las acciones de las vistas
+    script(src='main.js', type='text/javascript')
+    
+    // Necesario para el Dump
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    
+    //script(src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js')
+    //script(src='/javascripts/main.coffee', type='text/coffeescript')
+    //script(src='/javascripts/actions.coffee', type='text/coffeescript')
+    |         
+    meta(charset='utf-8')
+    |         
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |         
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |         
+    meta(name='description', content='')
+    |         
+    meta(name='Germán Paz Méndez', content='')
+    |         
+    link(rel='icon', href='assets/img/favicon.ico')
+    
+    // Estilos vistas
+    link(href='stylesheets/assets/css/bootstrap.css', rel='stylesheet')  
+    link(href='stylesheets/assets/css/style.css', rel='stylesheet')
+    link(href='stylesheets/global.css', rel='stylesheet', type='text/css')
+  |     
+  body
+      block content
